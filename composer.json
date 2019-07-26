@@ -1,0 +1,21 @@
+{
+    "name": "komicho/laravel-user-activity",
+    "authors": [
+        {
+            "name": "Karim Mohamed",
+            "email": "komicho1996@gmail.com"
+        }
+    ],
+    "autoload": {
+		"psr-4": {
+			"Komicho\\Laravel\\UserActivity\\": "/src"
+		}
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Komicho\\Laravel\\UserActivity\\ServiceProvider"
+            ]
+		}
+	}
+}
