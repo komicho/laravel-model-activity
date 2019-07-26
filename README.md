@@ -37,5 +37,5 @@ class User extends Authenticatable
 ```
 ### Get all activitys for user:-
 ```php
-Auth::user()->activitys();
+Auth::user()->activitys;
 ```
