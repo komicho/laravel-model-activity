@@ -1,10 +1,10 @@
 <?php
 
-namespace Komicho\Laravel\UserActivity\App\Models;
+namespace Komicho\Laravel\ModelActivity\App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Komicho\Laravel\UserActivity\Config;
+use Komicho\Laravel\ModelActivity\Config;
 
 class Activity extends Model
 {
@@ -23,8 +23,16 @@ class Activity extends Model
     protected $fillable = [
         'user_id',
         'item_id',
+        'model_name',
         'definition_flag'
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [ ];
 
     /**
      * The accessors to append to the model's array form.
@@ -37,6 +45,10 @@ class Activity extends Model
     public function getDefinitionAttribute()
     {
         $definitions = (new Config())['definitions'];
+        
+        if (!isset($definitions)) {
+            return $this->definition_flag;
+        }
 
         if (!in_array($this->definition_flag, array_keys($definitions))) {
             return $this->definition_flag;

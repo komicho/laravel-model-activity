@@ -1,6 +1,6 @@
 <?php
 
-namespace Komicho\Laravel\UserActivity;
+namespace Komicho\Laravel\ModelActivity;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {

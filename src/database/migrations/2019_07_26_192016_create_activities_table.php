@@ -17,6 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('item_id');
+            $table->string('model_name');
             $table->string('definition_flag');
             $table->timestamps();
         });

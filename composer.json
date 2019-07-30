@@ -1,5 +1,5 @@
 {
-    "name": "komicho/laravel-user-activity",
+    "name": "komicho/laravel-model-activity",
     "authors": [
         {
             "name": "Karim Mohamed",
@@ -8,13 +8,13 @@
     ],
     "autoload": {
 		"psr-4": {
-			"Komicho\\Laravel\\UserActivity\\": "/src"
+			"Komicho\\Laravel\\ModelActivity\\": "/src"
 		}
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Komicho\\Laravel\\UserActivity\\ServiceProvider"
+                "Komicho\\Laravel\\ModelActivity\\ServiceProvider"
             ]
 		}
 	}
