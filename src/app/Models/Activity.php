@@ -56,4 +56,13 @@ class Activity extends Model
 
         return $definitions[$this->definition_flag];
     }
+
+    public function user()
+    {
+        // Get user model
+        $userModel = config('auth.providers.users.model');
+
+        // Link the relationship with the user model
+        return $this->hasOne($userModel, 'id', 'user_id');
+    }
 }
