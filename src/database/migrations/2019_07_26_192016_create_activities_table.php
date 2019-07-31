@@ -19,6 +19,7 @@ class CreateActivitiesTable extends Migration
             $table->integer('item_id');
             $table->string('model_name');
             $table->string('definition_flag');
+            $table->text('definition_note')->nullable();
             $table->timestamps();
         });
     }

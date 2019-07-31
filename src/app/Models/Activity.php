@@ -24,7 +24,8 @@ class Activity extends Model
         'user_id',
         'item_id',
         'model_name',
-        'definition_flag'
+        'definition_flag',
+        'definition_note'
     ];
 
     /**
@@ -33,13 +34,6 @@ class Activity extends Model
      * @var array
      */
     protected $hidden = [ ];
-
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = ['definition'];
 
 
     public function getDefinitionAttribute()
@@ -55,6 +49,11 @@ class Activity extends Model
         }
 
         return $definitions[$this->definition_flag];
+    }
+
+    public function getNoteAttribute()
+    {
+        return $this->definition_note;
     }
 
     public function user()

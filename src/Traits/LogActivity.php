@@ -9,10 +9,16 @@ use Komicho\Laravel\ModelActivity\Classes\ActivityClass;
 
 trait LogActivity
 {
-    public function activityAdd($definition_flag = '')
+    public function activityAdd($definition_flag = '', $definition_note = null)
     {
         $user_id = Auth::id();
-        ActivityClass::add($user_id, $this->id, get_class($this), $definition_flag);
+        ActivityClass::add(
+            $user_id,
+            $this->id,
+            get_class($this),
+            $definition_flag,
+            $definition_note
+        );
     }
 
     public function activitys()
